@@ -1,0 +1,13 @@
+.code-isolation-test-container{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+.output{
+    font-size: 30px;
+}
+.increase, .decrease{
+    margin-top: 20px;
+    padding: 10px 20px 10px 20px;
+    font-size: 20px;
+}
