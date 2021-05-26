@@ -8,7 +8,7 @@ reqURL_krw = reqURL_krw.replace("{payment_currency}", "KRW");
 
 function CoinHistory() {
     useEffect(() => {
-        const response = axios.get(reqURL_krw).then(res => console.log(res));
+        axios.get(reqURL_krw).then(res => console.log(res.data.data));
     }, [])
 
     return (
