@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { debounce } from 'lodash';
-import { Bar } from 'react-chartjs-2';
-// import CoinChart from './chart/CoinChart';
+//import { Bar } from 'react-chartjs-2';
+import CoinChart from './chart/CoinChart';
 
 const bitsum_url = "https://api.bithumb.com/public/ticker/{order_currency}_{payment_currency}";
 let reqURL_krw : string = bitsum_url;
@@ -45,28 +45,28 @@ function CoinAPI() {
         }, 10000)();
     }, [allData]);
 
-    const label = ['시가', '종가', '변동가(24H)', '변동률(24H)', '최고가', '최저가'];
-    const data = {
-        labels: label,
-        datasets: [
-          {
-            label: 'BTC',
-            backgroundColor: 'rgba(255,99,132,0.2)',
-            borderColor: 'rgba(255,99,132,1)',
-            borderWidth: 1,
-            hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-            hoverBorderColor: 'rgba(255,99,132,1)',
-            data: [
-                    allData.opening_price, 
-                    allData.closing_price, 
-                    allData.fluctate_24H,
-                    allData.fluctate_rate_24H, 
-                    allData.max_price, 
-                    allData.min_price
-                ]
-          }
-        ]
-    };
+    // const label = ['시가', '종가', '변동가(24H)', '변동률(24H)', '최고가', '최저가'];
+    // const data = {
+    //     labels: label,
+    //     datasets: [
+    //       {
+    //         label: 'BTC',
+    //         backgroundColor: 'rgba(255,99,132,0.2)',
+    //         borderColor: 'rgba(255,99,132,1)',
+    //         borderWidth: 1,
+    //         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+    //         hoverBorderColor: 'rgba(255,99,132,1)',
+    //         data: [
+    //                 allData.opening_price, 
+    //                 allData.closing_price, 
+    //                 allData.fluctate_24H,
+    //                 allData.fluctate_rate_24H, 
+    //                 allData.max_price, 
+    //                 allData.min_price
+    //             ]
+    //       }
+    //     ]
+    // };
 
     return (
         <div>
@@ -89,7 +89,7 @@ function CoinAPI() {
             <br/>
             <div>
                 {/* type :  'line' | 'bar' | 'horizontalBar' | 'radar' | 'doughnut' | 'polarArea' | 'bubble' | 'pie' | 'scatter' */}
-                <Bar
+                {/* <Bar
                     type='bar'
                     data={data}
                     width={100}
@@ -106,8 +106,8 @@ function CoinAPI() {
                             }
                         }
                     }}
-                />
-                {/* <CoinChart/> */}
+                /> */}
+                <CoinChart/>
             </div>
         </div>
     )
