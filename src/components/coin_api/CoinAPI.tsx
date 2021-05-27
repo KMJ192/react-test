@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { debounce, fromPairs } from 'lodash';
+import { debounce } from 'lodash';
 import { Bar } from 'react-chartjs-2';
-import { Chart } from 'chart.js';
+// import CoinChart from './chart/CoinChart';
 
 const bitsum_url = "https://api.bithumb.com/public/ticker/{order_currency}_{payment_currency}";
 let reqURL_krw : string = bitsum_url;
@@ -42,7 +42,7 @@ function CoinAPI() {
                 units_traded: response["units_traded"],
                 units_traded_24H: response["units_traded_24H"]
             });
-        }, 1500)();
+        }, 10000)();
     }, [allData]);
 
     const label = ['시가', '종가', '변동가(24H)', '변동률(24H)', '최고가', '최저가'];
@@ -90,15 +90,24 @@ function CoinAPI() {
             <div>
                 {/* type :  'line' | 'bar' | 'horizontalBar' | 'radar' | 'doughnut' | 'polarArea' | 'bubble' | 'pie' | 'scatter' */}
                 <Bar
-                    type='horizontalBar'
+                    type='bar'
                     data={data}
                     width={100}
                     height={500}
                     options={{
                         maintainAspectRatio: false,
-                        
+                        Plugin:{
+                            legend: { 
+                                position: 'top'
+                            },
+                            title : {
+                                display : true,
+                                text : "test"
+                            }
+                        }
                     }}
                 />
+                {/* <CoinChart/> */}
             </div>
         </div>
     )

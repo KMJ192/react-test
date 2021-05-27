@@ -1,2 +1,6 @@
 react test용
-react-chartjs-2
+
+# chartjs
+
+- chart.js
+- react-chartjs-2
