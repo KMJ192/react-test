@@ -42,7 +42,7 @@ function CoinAPI() {
                 units_traded: response["units_traded"],
                 units_traded_24H: response["units_traded_24H"]
             });
-        }, 10000)();
+        }, 1500)();
     }, [allData]);
 
     // const label = ['시가', '종가', '변동가(24H)', '변동률(24H)', '최고가', '최저가'];

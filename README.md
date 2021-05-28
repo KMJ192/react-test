@@ -8,3 +8,6 @@ react test용
 # nhn chart
 
 - @toast-ui/chart
+
+# apexcharts
+ - npm install --save react-apexcharts apexcharts

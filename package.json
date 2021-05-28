@@ -15,14 +15,17 @@
     "@types/react-chartjs-2": "^2.5.7",
     "@types/react-dom": "^17.0.3",
     "@types/react-router-dom": "^5.1.7",
+    "apexcharts": "^3.26.3",
     "axios": "^0.21.1",
     "chart.js": "^3.3.0",
     "react": "^17.0.2",
+    "react-apexcharts": "^1.3.9",
     "react-chartjs-2": "^3.0.3",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
+    "wasm-test": "file:react-wasm_rust/pkg",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
