@@ -1,26 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactApexChart from 'react-apexcharts';
+import { ApexOptions } from 'apexcharts';
 
 function CoinChart() {
-  // const [chartData, setChartData] = useState({
-  //   options: {
-  //     chart: {
-  //       id: "basic-bar"
-  //     },
-  //     xaxis: {
-  //       categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
-  //     }
-  //   },
-  //   series: [
-  //     {
-  //       name: "series-1",
-  //       data: [30, 40, 45, 50, 49, 60, 70, 91]
-  //     }
-  //   ]
-  // });
-  const [chartData, setChartData] = useState({
+  const chartData = {
     series: [{
-      name: 'candle',
+      name: 'coin chart',
       data: [
         {
           x: new Date(1538778600000),
@@ -262,58 +247,109 @@ function CoinChart() {
           x: new Date(1538884800000),
           y: [6604.98, 6606, 6604.07, 6606]
         },
+        {
+          x: new Date(1538884800000),
+          y: [6604.98, 6606, 6604.07, 6606]
+        },
+        {
+          x: new Date(1538884800000),
+          y: [6604.98, 6606, 6604.07, 6606]
+        },
+        {
+          x: new Date(1538883000000),
+          y: [6603.85, 6605, 6600, 6604.07]
+        },
+        {
+          x: new Date(1538884800000),
+          y: [6604.98, 6606, 6604.07, 6606]
+        },
+        {
+          x: new Date(1538884800000),
+          y: [6604.98, 6606, 6604.07, 6606]
+        },
+        {
+          x: new Date(1538884800000),
+          y: [6604.98, 6620, 6604.07, 6606]
+        },
       ]
-    }],
-    options: {
-      chart: {
-        height: 350,
-        type: 'candlestick',
+    }]
+  };
+
+  const options : ApexOptions = {
+    title: {
+      text: 'coin chart example',
+      align: 'left'
+    },
+    chart: {
+      id: "coinChart",
+      height: 350,
+      type: 'candlestick',
+      animations : {
+        enabled : true,
+        easing : 'linear',
+        speed : 300,
+        animateGradually: {
+          enabled: true,
+        },
       },
-      title: {
-        text: 'CandleStick Chart - Category X-axis',
-        align: 'left'
+      background: '#0D0D0D',
+      defaultLocale: 'en',
+      foreColor: '#DBDBDB',
+      locales: [{
+        name:'en',
+        options: {
+          toolbar:{
+            zoomIn : "확대",
+            zoomOut : "축소",
+            selectionZoom : "선택영역 확대/축소",
+            pan: 'pan',
+            reset: "초기화"
+          }
+        }
+      }],
+      selection: {
+        fill: {
+          color: '#969696'
+        },
       },
-      annotations: {
-        xaxis: [{
-            x: 'Oct 06 14:00',
-            borderColor: '#00E396',
-            label: {
-              borderColor: '#00E396',
-              style: {
-                fontSize: '12px',
-                color: '#fff',
-                background: '#00E396'
-              },
-              orientation: 'horizontal',
-              offsetY: 7,
-              text: 'Annotation Test'
-            }
-          }]
+      events: {
+        scrolled: function(ReactApexChart, { xaxis, yaxis }: ApexOptions){
+          console.log(xaxis?.max)
+          if(xaxis?.max){
+            xaxis.max += 10;
+            console.log(xaxis.max);
+          }
+        }
       },
-      tooltip: {
-        enabled: false,
-      },
-      xaxis: {
-        type: 'category'
-      },
-      yaxis: {
-        tooltip: {
-          enabled: true
+      zoom:{
+        enabled: true,
+        type: 'xy',
+      }
+    },
+    plotOptions: {
+      candlestick: {
+        colors: {
+          upward: '#FF0000',
+          downward: '#2328FF'
         }
       }
+    },
+    xaxis: {
+      min: 0,
+      max: 66
     }
-  });
+  }
 
-    return (
-        <div>
-            <ReactApexChart
-              options={chartData.options}
-              series={chartData.series}
-              type="bar" 
-              height={350} 
-            />
-        </div>
-    )
+  return (
+      <div>
+          <ReactApexChart
+            options={options}
+            series={chartData.series}
+            type="candlestick" 
+            height={350} 
+          />
+      </div>
+  );
 }
 
 export default React.memo(CoinChart);
