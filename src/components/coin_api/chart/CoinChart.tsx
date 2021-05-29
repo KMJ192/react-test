@@ -335,9 +335,13 @@ function CoinChart() {
       }
     },
     xaxis: {
-      min: 0,
+      min: 10,
       max: 66
-    }
+    },
+    // yaxis: {
+    //   min: 6400,
+    //   max: 6700
+    // }
   }
 
   return (
