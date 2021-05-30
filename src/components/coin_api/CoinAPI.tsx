@@ -23,8 +23,6 @@ function CoinAPI() {
         units_traded_24H: ""
     });
 
-    let coinData : number[] = [];
-
     useEffect(() => {
         debounce(async () => {
             const response = await axios.get(reqURL_krw)
@@ -43,9 +41,8 @@ function CoinAPI() {
                 units_traded: response["units_traded"],
                 units_traded_24H: response["units_traded_24H"]
             });
-            coinData.push(response["acc_trade_value"]);
         }, 1500)();
-    }, [allData, coinData]);
+    }, [allData]);
 
     return (
         <div>
