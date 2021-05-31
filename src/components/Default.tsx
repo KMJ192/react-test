@@ -5,6 +5,7 @@ function Default() {
         <div>
             <a href="/splite-code"><button>splite-code</button></a>
             <a href="/coin_api"><button>coin_api</button></a>
+            <a href="/cors-test"><button>cors_test</button></a>
         </div>
     )
 }
