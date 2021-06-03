@@ -13,7 +13,7 @@ function CoinHistory() {
 
     return (
         <div>
-            
+            머
         </div>
     )
 }
