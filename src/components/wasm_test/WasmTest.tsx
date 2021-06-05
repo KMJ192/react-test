@@ -1,8 +1,11 @@
 import React from 'react';
-// import * as wasm from 'wasm-test';
+//import * as wasm from 'wasm-test';
 
 function WasmTest() {
-    // wasm.greet("test");
+    // const wasmAlert = async (warnText : string) => {
+    //     await wasm.greet(warnText);
+    // }
+
     return (
         <div>
             Wasm Test            
