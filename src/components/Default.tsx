@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Default() {
+function Default() {    
     return (
         <div>
             <a href="/splite-code"><button>splite-code</button></a>
