@@ -5,14 +5,14 @@ import { useRef } from 'react'
 function Chart() {
     const chartSample = useRef<any>(null);
     const makeChart = () => {
-        let chart = createChart(chartSample.current.id, {
+        let chart = createChart(chartSample.current, {
             width: 500,
             height: 300,
-            layout:{
+            layout: {
                 backgroundColor: "#000000",
                 textColor: "rgba(255, 255, 255, 0)"
-            }
-        })
+            },
+        });
     }
 
     return (
@@ -22,4 +22,4 @@ function Chart() {
     )
 }
 
-export default Chart
+export default React.memo(Chart);
