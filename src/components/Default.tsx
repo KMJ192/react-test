@@ -9,6 +9,7 @@ function Default() {
             <a href="/wasm-test"><button>wasm_test</button></a>
             <a href="/hooks"><button>hooksTest</button></a>
             <a href="/chart"><button>chart</button></a>
+            <a href="/count"><button>count</button></a>
         </div>
     )
 }
