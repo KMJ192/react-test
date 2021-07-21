@@ -10,6 +10,7 @@ function Default() {
             <a href="/hooks"><button>hooksTest</button></a>
             <a href="/chart"><button>chart</button></a>
             <a href="/count"><button>count</button></a>
+            <a href="/route"><button>route</button></a>
         </div>
     )
 }
