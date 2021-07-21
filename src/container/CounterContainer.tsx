@@ -5,6 +5,7 @@ import Counter from '../components/counter/Counter';
 import { increase, decrease, increase_by } from '../modules/counter';
 import { RootState } from '../modules/index';
 
+
 function CounterContainer() {
     const count = useSelector((state: RootState) => state.counter.count);
     const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function CounterContainer() {
     }, [dispatch]);
 
     const onIncreaseBy = useCallback((d: number) => {
+        //throw new Error("test");
         dispatch(increase_by(d));
     }, [dispatch]);
 
