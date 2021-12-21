@@ -30,6 +30,9 @@ function Default() {
       <a href="/elementTest">
         <button>elementTest</button>
       </a>
+      <a href="/event-delegation">
+        <button>eventDelegation</button>
+      </a>
     </div>
   );
 }

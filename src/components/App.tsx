@@ -14,6 +14,7 @@ import WasmTest from "./wasm_test/WasmTest";
 import Routing from "./routing/Routing";
 import RoutingRedirect from "./routing/Routing";
 import ElementTest from "./ElementTest";
+import EventDelegation from "./EventDelegation";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           </Route>
           <Route path="/route/redirect" exact component={RoutingRedirect} />
           <Route path="/elementTest" exact component={ElementTest} />
+          <Route path="/event-delegation" exact component={EventDelegation} />
           <Route exact component={NotFound} />
         </Switch>
       </ErrorBoundary>
